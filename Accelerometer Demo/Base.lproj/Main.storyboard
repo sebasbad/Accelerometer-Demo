@@ -78,6 +78,7 @@
                         <outlet property="dynamicLabel" destination="0Fb-gQ-vA7" id="Tmo-t8-Iua"/>
                         <outlet property="dynamicStartButton" destination="uCU-7n-rX0" id="Bjw-En-kIc"/>
                         <outlet property="dynamicStopButton" destination="BFK-NN-zdJ" id="yvB-GW-882"/>
+                        <outlet property="imageView" destination="h7I-vb-K1k" id="TSA-y0-hTd"/>
                         <outlet property="staticButton" destination="k6Z-ET-DDF" id="vjT-qP-gZU"/>
                         <outlet property="staticLabel" destination="Awv-iI-zza" id="2TZ-M1-Q2O"/>
                     </connections>

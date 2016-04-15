@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *dynamicStartButton;
 @property (weak, nonatomic) IBOutlet UIButton *dynamicStopButton;
 @property (weak, nonatomic) IBOutlet UILabel *dynamicLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @property (strong, nonatomic) CMMotionManager *coreMotionManager;
 
