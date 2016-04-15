@@ -10,7 +10,10 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *staticButton;
 @property (weak, nonatomic) IBOutlet UILabel *staticLabel;
+@property (weak, nonatomic) IBOutlet UIButton *dynamicStartButton;
+@property (weak, nonatomic) IBOutlet UIButton *dynamicStopButton;
 @property (weak, nonatomic) IBOutlet UILabel *dynamicLabel;
 
 @end
