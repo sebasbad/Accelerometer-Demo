@@ -65,6 +65,10 @@
                             <constraint firstItem="h7I-vb-K1k" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vaQ-ng-cQN"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dynamicLabel" destination="0Fb-gQ-vA7" id="Tmo-t8-Iua"/>
+                        <outlet property="staticLabel" destination="Awv-iI-zza" id="2TZ-M1-Q2O"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
