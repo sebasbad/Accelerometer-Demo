@@ -66,6 +66,8 @@
     
     self.dynamicStartButton.enabled = NO;
     self.dynamicStopButton.enabled = YES;
+    
+    self.coreMotionManager.accelerometerUpdateInterval = 0.01; // seconds
 }
 
 - (IBAction)stopDynamicRequest:(id)sender {
