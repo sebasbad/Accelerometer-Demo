@@ -89,6 +89,10 @@
 }
 
 - (IBAction)stopDynamicRequest:(id)sender {
+    
+    [self.coreMotionManager stopAccelerometerUpdates];
+    self.dynamicStopButton.enabled = NO;
+    self.dynamicStartButton.enabled = YES;
 }
 
 @end
