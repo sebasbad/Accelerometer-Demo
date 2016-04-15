@@ -16,6 +16,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *dynamicStopButton;
 @property (weak, nonatomic) IBOutlet UILabel *dynamicLabel;
 
+@property (strong, nonatomic) CMMotionManager *coreMotionManager;
+
 @end
 
 @implementation ViewController
@@ -29,6 +31,8 @@
     self.staticButton.enabled = NO;
     self.dynamicStartButton.enabled = NO;
     self.dynamicStopButton.enabled = NO;
+    
+    self.coreMotionManager = [[CMMotionManager alloc] init];
 }
 
 - (void)didReceiveMemoryWarning {
