@@ -27,11 +27,19 @@ platform :ios do
     scan
   end
 
+  desc "Build and distribute build to Crashlytics"
+  desc "This will also make sure the profile is up to date"
+  lane :crashlytics_beta do
+    # match(type: "appstore") # more information: https://codesigning.guide
+    gym(scheme: "Accelerometer Demo", use_legacy_build_api: true) # Build your app - more options available
+    crashlytics(crashlytics_path: "./Crashlytics.framework/")
+  end
+
   desc "Submit a new Beta Build to Apple TestFlight"
   desc "This will also make sure the profile is up to date"
-  lane :beta do
+  lane :testflight_beta do
     # match(type: "appstore") # more information: https://codesigning.guide
-    gym(scheme: "Accelerometer Demo") # Build your app - more options available
+    gym(scheme: "Accelerometer Demo", use_legacy_build_api: true) # Build your app - more options available
     pilot
 
     # sh "your_script.sh"
