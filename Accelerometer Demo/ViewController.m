@@ -33,6 +33,8 @@
     self.dynamicStartButton.enabled = NO;
     self.dynamicStopButton.enabled = NO;
     
+    self.imageView.image = [UIImage imageNamed:@"dog.jpg"];
+    
     self.coreMotionManager = [[CMMotionManager alloc] init];
 }
 
