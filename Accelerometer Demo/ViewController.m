@@ -19,6 +19,8 @@
 
 @property (strong, nonatomic) CMMotionManager *coreMotionManager;
 
+@property (assign, nonatomic) double x, y, z;
+
 @end
 
 @implementation ViewController
@@ -32,6 +34,10 @@
     self.staticButton.enabled = NO;
     self.dynamicStartButton.enabled = NO;
     self.dynamicStopButton.enabled = NO;
+    
+    self.x = 0.0;
+    self.y = 0.0;
+    self.z = 0.0;
     
     self.imageView.image = [UIImage imageNamed:@"dog.jpg"];
     
@@ -80,8 +86,16 @@
         double y = accelerometerData.acceleration.y;
         double z = accelerometerData.acceleration.z;
         
+        self.x = .9 * self.x + .1 * x;
+        self.y = .9 * self.y + .1 * y;
+        self.z = .9 * self.z + .1 * z;
+        
+        double rotation = atan2(self.x, -self.y);
+        
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             // can update UI here
+            
+            weakSelf.imageView.transform = CGAffineTransformMakeRotation(rotation);
             
             weakSelf.dynamicLabel.text = [NSString stringWithFormat:@"x:%f\ny:%f\nz:%f", x, y, z];
         }];
