@@ -30,4 +30,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)staticRequest:(id)sender {
+}
+
+- (IBAction)startDynamicRequest:(id)sender {
+}
+
+- (IBAction)stopDynamicRequest:(id)sender {
+}
+
 @end
