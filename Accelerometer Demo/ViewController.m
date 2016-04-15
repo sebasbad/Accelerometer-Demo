@@ -63,6 +63,9 @@
 }
 
 - (IBAction)startDynamicRequest:(id)sender {
+    
+    self.dynamicStartButton.enabled = NO;
+    self.dynamicStopButton.enabled = YES;
 }
 
 - (IBAction)stopDynamicRequest:(id)sender {
