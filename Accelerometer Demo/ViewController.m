@@ -36,6 +36,14 @@
     self.imageView.image = [UIImage imageNamed:@"dog.jpg"];
     
     self.coreMotionManager = [[CMMotionManager alloc] init];
+    
+    if (self.coreMotionManager.accelerometerAvailable) {
+        self.staticButton.enabled = YES;
+        self.dynamicStartButton.enabled = YES;
+    } else {
+        self.staticLabel.text = @"No Accelerometer Available";
+        self.dynamicLabel.text = @"No Accelerometer Available";
+    }
 }
 
 - (void)didReceiveMemoryWarning {
