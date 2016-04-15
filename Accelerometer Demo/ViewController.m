@@ -53,6 +53,13 @@
 }
 
 - (IBAction)staticRequest:(id)sender {
+    
+    CMAccelerometerData *accelerometerDataX = self.coreMotionManager.accelerometerData;
+    
+    if (nil != accelerometerDataX) {
+        CMAcceleration accelerationY = accelerometerDataX.acceleration;
+        self.staticLabel.text = [NSString stringWithFormat:@"x:%f\ny:%f\nz:%f", accelerationY.x, accelerationY.y, accelerationY.z];
+    }
 }
 
 - (IBAction)startDynamicRequest:(id)sender {
