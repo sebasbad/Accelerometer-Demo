@@ -68,6 +68,24 @@
     self.dynamicStopButton.enabled = YES;
     
     self.coreMotionManager.accelerometerUpdateInterval = 0.01; // seconds
+    
+    ViewController * __weak weakSelf = self;
+    
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    
+    [self.coreMotionManager startAccelerometerUpdatesToQueue:queue withHandler:^(CMAccelerometerData * _Nullable accelerometerData, NSError * _Nullable error) {
+        // can do work here without blocking the UI
+        
+        double x = accelerometerData.acceleration.x;
+        double y = accelerometerData.acceleration.y;
+        double z = accelerometerData.acceleration.z;
+        
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            // can update UI here
+            
+            weakSelf.dynamicLabel.text = [NSString stringWithFormat:@"x:%f\ny:%f\nz:%f", x, y, z];
+        }];
+    }];
 }
 
 - (IBAction)stopDynamicRequest:(id)sender {
