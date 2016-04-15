@@ -40,6 +40,7 @@
     if (self.coreMotionManager.accelerometerAvailable) {
         self.staticButton.enabled = YES;
         self.dynamicStartButton.enabled = YES;
+        [self.coreMotionManager startAccelerometerUpdates];
     } else {
         self.staticLabel.text = @"No Accelerometer Available";
         self.dynamicLabel.text = @"No Accelerometer Available";
