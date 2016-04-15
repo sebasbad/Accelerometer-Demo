@@ -25,6 +25,10 @@
     
     self.staticLabel.text = @"No data";
     self.dynamicLabel.text = @"No data";
+    
+    self.staticButton.enabled = NO;
+    self.dynamicStartButton.enabled = NO;
+    self.dynamicStopButton.enabled = NO;
 }
 
 - (void)didReceiveMemoryWarning {
