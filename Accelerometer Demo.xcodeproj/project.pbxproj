@@ -13,6 +13,8 @@
 		41BC18651CBF60EC00083130 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41BC18631CBF60EC00083130 /* Main.storyboard */; };
 		41BC18671CBF60EC00083130 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41BC18661CBF60EC00083130 /* Assets.xcassets */; };
 		41BC186A1CBF60EC00083130 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41BC18681CBF60EC00083130 /* LaunchScreen.storyboard */; };
+		41BC18721CBF61BC00083130 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41BC18711CBF61BC00083130 /* CoreMotion.framework */; };
+		41F5710F1CC02CC4009CB455 /* dog.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 41F5710E1CC02CC4009CB455 /* dog.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		41BC18661CBF60EC00083130 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		41BC18691CBF60EC00083130 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		41BC186B1CBF60EC00083130 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41BC18711CBF61BC00083130 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		41F5710E1CC02CC4009CB455 /* dog.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dog.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41BC18721CBF61BC00083130 /* CoreMotion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,7 @@
 		41BC184E1CBF60EC00083130 = {
 			isa = PBXGroup;
 			children = (
+				41BC18711CBF61BC00083130 /* CoreMotion.framework */,
 				41BC18591CBF60EC00083130 /* Accelerometer Demo */,
 				41BC18581CBF60EC00083130 /* Products */,
 			);
@@ -66,6 +72,7 @@
 				41BC18661CBF60EC00083130 /* Assets.xcassets */,
 				41BC18681CBF60EC00083130 /* LaunchScreen.storyboard */,
 				41BC186B1CBF60EC00083130 /* Info.plist */,
+				41F5710E1CC02CC4009CB455 /* dog.jpg */,
 				41BC185A1CBF60EC00083130 /* Supporting Files */,
 			);
 			path = "Accelerometer Demo";
@@ -136,6 +143,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41F5710F1CC02CC4009CB455 /* dog.jpg in Resources */,
 				41BC186A1CBF60EC00083130 /* LaunchScreen.storyboard in Resources */,
 				41BC18671CBF60EC00083130 /* Assets.xcassets in Resources */,
 				41BC18651CBF60EC00083130 /* Main.storyboard in Resources */,
@@ -302,6 +310,7 @@
 				41BC18701CBF60EC00083130 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
