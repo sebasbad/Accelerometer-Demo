@@ -22,7 +22,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    self.staticLabel.text = @"No data";
+    self.dynamicLabel.text = @"No data";
 }
 
 - (void)didReceiveMemoryWarning {
