@@ -54,11 +54,11 @@
 
 - (IBAction)staticRequest:(id)sender {
     
-    CMAccelerometerData *accelerometerDataX = self.coreMotionManager.accelerometerData;
+    CMAccelerometerData *accelerometerData = self.coreMotionManager.accelerometerData;
     
-    if (nil != accelerometerDataX) {
-        CMAcceleration accelerationY = accelerometerDataX.acceleration;
-        self.staticLabel.text = [NSString stringWithFormat:@"x:%f\ny:%f\nz:%f", accelerationY.x, accelerationY.y, accelerationY.z];
+    if (nil != accelerometerData) {
+        CMAcceleration acceleration = accelerometerData.acceleration;
+        self.staticLabel.text = [NSString stringWithFormat:@"x:%f\ny:%f\nz:%f", acceleration.x, acceleration.y, acceleration.z];
     }
 }
 
