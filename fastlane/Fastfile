@@ -27,12 +27,44 @@ platform :ios do
     scan
   end
 
+  desc "Bump patch"
+  lane :bump do
+    increment_build_number(build_number: '1')
+    increment_version_number(bump_type:"patch")
+    commit_version_bump
+  end
+
+  desc "Bump minor"
+  lane :bump_minor do
+    increment_build_number(build_number: '1')
+    increment_version_number(bump_type:"minor")
+    commit_version_bump
+  end
+
+  desc "Bump major"
+  lane :bump_major do
+    increment_build_number(build_number: '1')
+    increment_version_number(bump_type:"major")
+    commit_version_bump
+  end
+
+  def change_log_since_last_tag
+    # http://git-scm.com/docs/pretty-formats
+    # <short hash> <commit title>
+    return changelog_from_git_commits(pretty: '%h %s')
+  end
+
   desc "Build and distribute build to Crashlytics"
   desc "This will also make sure the profile is up to date"
   lane :crashlytics_beta do
     # match(type: "appstore") # more information: https://codesigning.guide
     gym(scheme: "Accelerometer Demo", use_legacy_build_api: true) # Build your app - more options available
-    crashlytics(crashlytics_path: "./Crashlytics.framework/")
+    increment_build_number
+    crashlytics(
+      crashlytics_path: "./Crashlytics.framework/",
+      emails: "sebasbad@gmail.com",
+      notes: change_log_since_last_tag
+    )
   end
 
   desc "Submit a new Beta Build to Apple TestFlight"
