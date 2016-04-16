@@ -11,9 +11,9 @@ sudo gem install fastlane
 fastlane ios test
 ```
 Runs all the tests
-### ios bump
+### ios bump_patch
 ```
-fastlane ios bump
+fastlane ios bump_patch
 ```
 Bump patch
 ### ios bump_minor
@@ -26,6 +26,11 @@ Bump minor
 fastlane ios bump_major
 ```
 Bump major
+### ios bump_build
+```
+fastlane ios bump_build
+```
+Bump build
 ### ios crashlytics_beta
 ```
 fastlane ios crashlytics_beta
