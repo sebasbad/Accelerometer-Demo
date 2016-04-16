@@ -98,15 +98,6 @@ platform :ios do
     # You can also use other beta testing services here (run `fastlane actions`)
   end
 
-  desc "Deploy a new version to the App Store"
-  lane :appstore do
-    # match(type: "appstore")
-    # snapshot
-    gym(scheme: "Accelerometer Demo") # Build your app - more options available
-    deliver(force: true)
-    # frameit
-  end
-
   # You can define as many lanes as you want
 
   after_all do |lane|
