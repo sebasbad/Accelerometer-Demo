@@ -77,9 +77,10 @@ platform :ios do
   desc "Build and distribute build to Crashlytics"
   desc "This will also make sure the profile is up to date"
   lane :crashlytics_beta do
+    bump_build
+    puts "Generating beta: #{version_string}"
     # match(type: "appstore") # more information: https://codesigning.guide
     gym(scheme: "Accelerometer Demo", use_legacy_build_api: true) # Build your app - more options available
-    bump_build
     crashlytics(
       crashlytics_path: "./Crashlytics.framework/",
       emails: "sebasbad@gmail.com",
