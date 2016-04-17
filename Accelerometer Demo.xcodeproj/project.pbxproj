@@ -14,6 +14,8 @@
 		41BC18671CBF60EC00083130 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41BC18661CBF60EC00083130 /* Assets.xcassets */; };
 		41BC186A1CBF60EC00083130 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41BC18681CBF60EC00083130 /* LaunchScreen.storyboard */; };
 		41BC18721CBF61BC00083130 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41BC18711CBF61BC00083130 /* CoreMotion.framework */; };
+		41F2A6A71CC1847C005FF13C /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41F2A6A51CC1847C005FF13C /* Fabric.framework */; };
+		41F2A6A81CC1847C005FF13C /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41F2A6A61CC1847C005FF13C /* Crashlytics.framework */; };
 		41F5710F1CC02CC4009CB455 /* dog.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 41F5710E1CC02CC4009CB455 /* dog.jpg */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +31,8 @@
 		41BC18691CBF60EC00083130 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		41BC186B1CBF60EC00083130 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41BC18711CBF61BC00083130 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		41F2A6A51CC1847C005FF13C /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		41F2A6A61CC1847C005FF13C /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		41F5710E1CC02CC4009CB455 /* dog.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dog.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -38,6 +42,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				41BC18721CBF61BC00083130 /* CoreMotion.framework in Frameworks */,
+				41F2A6A81CC1847C005FF13C /* Crashlytics.framework in Frameworks */,
+				41F2A6A71CC1847C005FF13C /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +56,8 @@
 				41BC18711CBF61BC00083130 /* CoreMotion.framework */,
 				41BC18591CBF60EC00083130 /* Accelerometer Demo */,
 				41BC18581CBF60EC00083130 /* Products */,
+				41F2A6A51CC1847C005FF13C /* Fabric.framework */,
+				41F2A6A61CC1847C005FF13C /* Crashlytics.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +104,7 @@
 				41BC18531CBF60EC00083130 /* Sources */,
 				41BC18541CBF60EC00083130 /* Frameworks */,
 				41BC18551CBF60EC00083130 /* Resources */,
+				41F2A6A41CC18437005FF13C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -151,6 +160,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		41F2A6A41CC18437005FF13C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 326924495c928c921e1a5b32ff937a1b8fa7d643 a0a12dbfd14489e1b7c52148805d8707bb1e974a642ee0d1e6edc4d982bfa21f";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		41BC18531CBF60EC00083130 /* Sources */ = {
@@ -273,10 +298,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CURRENT_PROJECT_VERSION = 5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Accelerometer Demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "cat.sebasbad.Accelerometer-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -284,10 +315,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CURRENT_PROJECT_VERSION = 5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Accelerometer Demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "cat.sebasbad.Accelerometer-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};

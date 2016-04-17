@@ -90,7 +90,7 @@
         self.y = .9 * self.y + .1 * y;
         self.z = .9 * self.z + .1 * z;
         
-        double rotation = atan2(self.x, -self.y);
+        double rotation = -atan2(self.x, -self.y);
         
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             // can update UI here
