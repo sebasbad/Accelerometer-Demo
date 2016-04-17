@@ -22,17 +22,70 @@ platform :ios do
     
   end
 
+  def change_log_since_last_tag
+    # http://git-scm.com/docs/pretty-formats
+    # <short hash> <commit title>
+    return changelog_from_git_commits(pretty: '%h %s')
+  end
+
+  def version_string
+    "#{get_version_number} (#{get_build_number})"
+  end
+
+  def git_commit_bump(bump_type_prefix)
+    git_commit(
+      path: [
+        "./Accelerometer Demo.xcodeproj",
+        "./Accelerometer Demo/Info.plist" 
+      ],
+      message: "#{bump_type_prefix} Bump to #{version_string}"
+    )
+  end
+
   desc "Runs all the tests"
   lane :test do
     scan
   end
 
+  desc "Bump patch"
+  lane :bump_patch do
+    increment_build_number
+    increment_version_number(bump_type:"patch")
+    git_commit_bump("Version")
+  end
+
+  desc "Bump minor"
+  lane :bump_minor do
+    increment_build_number
+    increment_version_number(bump_type:"minor")
+    git_commit_bump("Version")
+  end
+
+  desc "Bump major"
+  lane :bump_major do
+    increment_build_number
+    increment_version_number(bump_type:"major")
+    git_commit_bump("Version")
+  end
+
+  desc "Bump build"
+  lane :bump_build do
+    increment_build_number
+    git_commit_bump("Build")
+  end
+
   desc "Build and distribute build to Crashlytics"
   desc "This will also make sure the profile is up to date"
   lane :crashlytics_beta do
+    bump_build
+    puts "Generating beta: #{version_string}"
     # match(type: "appstore") # more information: https://codesigning.guide
     gym(scheme: "Accelerometer Demo", use_legacy_build_api: true) # Build your app - more options available
-    crashlytics(crashlytics_path: "./Crashlytics.framework/")
+    crashlytics(
+      crashlytics_path: "./Crashlytics.framework/",
+      emails: "sebasbad@gmail.com",
+      notes: change_log_since_last_tag
+    )
   end
 
   desc "Submit a new Beta Build to Apple TestFlight"
@@ -44,15 +97,6 @@ platform :ios do
 
     # sh "your_script.sh"
     # You can also use other beta testing services here (run `fastlane actions`)
-  end
-
-  desc "Deploy a new version to the App Store"
-  lane :appstore do
-    # match(type: "appstore")
-    # snapshot
-    gym(scheme: "Accelerometer Demo") # Build your app - more options available
-    deliver(force: true)
-    # frameit
   end
 
   # You can define as many lanes as you want

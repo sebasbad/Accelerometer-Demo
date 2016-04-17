@@ -11,6 +11,26 @@ sudo gem install fastlane
 fastlane ios test
 ```
 Runs all the tests
+### ios bump_patch
+```
+fastlane ios bump_patch
+```
+Bump patch
+### ios bump_minor
+```
+fastlane ios bump_minor
+```
+Bump minor
+### ios bump_major
+```
+fastlane ios bump_major
+```
+Bump major
+### ios bump_build
+```
+fastlane ios bump_build
+```
+Bump build
 ### ios crashlytics_beta
 ```
 fastlane ios crashlytics_beta
@@ -25,11 +45,6 @@ fastlane ios testflight_beta
 Submit a new Beta Build to Apple TestFlight
 
 This will also make sure the profile is up to date
-### ios appstore
-```
-fastlane ios appstore
-```
-Deploy a new version to the App Store
 
 ----
 
