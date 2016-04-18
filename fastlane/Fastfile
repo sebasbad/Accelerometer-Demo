@@ -15,6 +15,10 @@ fastlane_version "1.81.0"
 
 default_platform :ios
 
+# Config
+
+APP_SCHEME = "Accelerometer Demo"
+
 platform :ios do
   before_all do
     # ENV["SLACK_URL"] = "https://hooks.slack.com/services/..."
@@ -35,8 +39,8 @@ platform :ios do
   def git_commit_bump(bump_type_prefix)
     git_commit(
       path: [
-        "./Accelerometer Demo.xcodeproj",
-        "./Accelerometer Demo/Info.plist" 
+        "./#{APP_SCHEME}.xcodeproj",
+        "./#{APP_SCHEME}/Info.plist" 
       ],
       message: "#{bump_type_prefix} Bump to #{version_string}"
     )
@@ -80,7 +84,7 @@ platform :ios do
     bump_build
     puts "Generating beta: #{version_string}"
     # match(type: "appstore") # more information: https://codesigning.guide
-    gym(scheme: "Accelerometer Demo", use_legacy_build_api: true) # Build your app - more options available
+    gym(scheme: APP_SCHEME, use_legacy_build_api: true) # Build your app - more options available
     crashlytics(
       crashlytics_path: "./Crashlytics.framework/",
       emails: "sebasbad@gmail.com",
@@ -92,7 +96,7 @@ platform :ios do
   desc "This will also make sure the profile is up to date"
   lane :testflight_beta do
     # match(type: "appstore") # more information: https://codesigning.guide
-    gym(scheme: "Accelerometer Demo", use_legacy_build_api: true) # Build your app - more options available
+    gym(scheme: APP_SCHEME, use_legacy_build_api: true) # Build your app - more options available
     pilot
 
     # sh "your_script.sh"
